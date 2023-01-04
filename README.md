@@ -40,12 +40,11 @@ Usage
         -t | --timeout                Default is 90s. Script monitors ECS Service for new task definition to be running.
         -e | --tag-env-var            Get image tag name from environment variable. If provided this will override value specified in image name argument.
         -to | --tag-only              New tag to apply to all images defined in the task (multi-container task). If provided this will override value specified in image name argument.
+        --tag_only_container_names    This parameter can work when --tag-only is enabled. It passes specfic container names which should be updated with the new tag and other containers will not be updated with the provided tag   
         --max-definitions             Number of Task Definition Revisions to persist before deregistering oldest revisions.
                                       Note: This number must be 1 or higher (i.e. keep only the current revision ACTIVE).
                                             Max definitions causes all task revisions not matching criteria to be deregistered, even if they're created manually.
                                             Script will only perform deregistration if deployment succeeds.
-        
-        -- tag_only_container_names   This parameter can work when --tag-only is enabled. It passes specfic container names which should be updated with the new tag and other containers will not be updated with the provided tag   
         --task-definition-file        File used as task definition to deploy
         --enable-rollback             Rollback task definition if new version is not running before TIMEOUT
         --use-latest-task-def         Will use the most recently created task definition as it's base, rather than the last used.
